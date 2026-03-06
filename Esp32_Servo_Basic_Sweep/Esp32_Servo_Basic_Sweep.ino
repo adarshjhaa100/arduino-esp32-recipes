@@ -55,6 +55,12 @@ int servoPin = 7;
 int servoPin = 18;
 #endif
 
+
+
+#define CONTROL_USING_BUTTONS 1
+#define MAX_ROTATE_ANGLE 180
+#define MIN_ROTATE_ANGLE 0
+
 void setup() {
 	Serial.begin(115200);
 
@@ -67,14 +73,11 @@ void setup() {
 	myservo.setPeriodHertz(50);    // standard 50 hz servo
 	// These parameter determine the PW ( min, max sent to servo )
 	myservo.attach(servoPin, 500, 2450); // attaches the servo on pin 18 to the servo object
+	myservo.write(pos);
 	// using default min/max of 1000us and 2000us
 		// different servos may require different min/max settings
 	// for an accurate 0 to 180 sweep
 }
-
-#define CONTROL_USING_BUTTONS 1
-#define MAX_ROTATE_ANGLE 180
-#define MIN_ROTATE_ANGLE 0
 
 // check Input and rotate
 void checkInputAndRotate() {

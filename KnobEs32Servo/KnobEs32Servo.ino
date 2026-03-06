@@ -1,4 +1,7 @@
 /*
+
+ NOTE: Please check the breadboard connection for potentiometer
+
  Controlling a servo position using a potentiometer (variable resistor)
  by Michal Rinott <http://people.interaction-ivrea.it/m.rinott>
 

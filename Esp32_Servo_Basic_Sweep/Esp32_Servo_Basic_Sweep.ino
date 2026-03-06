@@ -94,13 +94,12 @@ void checkInputAndRotate() {
 	if(CONTROL_USING_BUTTONS && touchRead(4) <= 2) {
 		myservo.write(pos);
 		pos+=direction;
-		delay(10);
+		delay(50); // reduce this to change speed, or increse the direction variable abs
 	}
 }
 
 void loop() {
-	Serial.println(touchRead(4)); // read touch 0 which is on pin 4
-	delay(10);
+
 	checkInputAndRotate();
 
 
